@@ -68,5 +68,37 @@ By default the camera focus on the scene center. But we can tell the camera  whe
 
 
 ### `Scene Graph` using group
+We can create a group using `new THREE.Group()`. since it's an object so we added this into scene `scene.add(group)`.
+Mow we can create multiple materials and add to this group. and if need we will `position`, `scale` & `rotation` the whole group.
+we did it on `script2.js` file
+https://threejs.org/docs/index.html?q=gro#api/en/objects/Group
+```javascript
+//create a group
+const group = new THREE.Group()
+group.position.y = 1
+group.scale.y = 2
+group.rotation.y = 1
+scene.add(group)
 
+//Materials or Objects
+const mesh = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+)
+mesh.position.x = - 2
+group.add(mesh)
+
+const mesh2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+group.add(mesh2)
+
+const mesh3 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+)
+mesh3.position.x = 2
+group.add(mesh3)
+```
 
