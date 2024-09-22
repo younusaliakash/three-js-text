@@ -50,8 +50,13 @@ const tick = () => {
     // mesh.position.y  = elapsedTime
 
     //play with position by using trigonometry
-    mesh.position.y  = Math.sin(elapsedTime)
-    mesh.position.x = Math.cos(elapsedTime)
+    // mesh.position.y  = Math.sin(elapsedTime)
+    // mesh.position.x = Math.cos(elapsedTime)
+
+    //camera animation
+    camera.position.y  = Math.sin(elapsedTime)
+    camera.position.x = Math.cos(elapsedTime)
+    camera.lookAt(mesh.position)
 
     //render
     renderer.render(scene, camera)
