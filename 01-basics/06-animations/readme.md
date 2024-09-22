@@ -77,3 +77,8 @@ const tick = () => {
 }
 tick()
 ```
+**_Solutions: 3_**
+- Using `getDelta()` : https://threejs.org/docs/#api/en/core/Clock. it almost same as the `elapsedTime()`. read the documentation.
+
+- **Animations Using `GSAP`**
+ it's an animation library that help to animate objects without using row code. it has it's own method to create an animation. we just install the animation library and call the method with arguments and make animation.
