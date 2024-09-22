@@ -33,3 +33,26 @@ npm run build
     }
     tick()
     ```
+
+- **Fix the Frame rate (FPS)**
+ Frame rate depend on the host computer. If you see on 120FPS computer you will see the object move very fast and 60FPS will slower than that computer. But we have to fix the frame rate and stay same for all devices.
+
+ ***Solutions: 1***
+ - Using `Date.now()`. We will store the time outside the tick function and again store the current time inside the tick function and subtraction time from current time and multiply the rotation value. then set current time as a time.
+ ```javascript	
+ //store time
+let time = Date.now()
+
+const tick = () => {
+    const currentTime = Date.now()
+    const deltaTime = currentTime - time
+    time = currentTime
+    mesh.rotation.y += 0.001 * deltaTime
+
+    //render
+    renderer.render(scene, camera)
+    window.requestAnimationFrame(tick)
+}
+tick()
+ ```
+
