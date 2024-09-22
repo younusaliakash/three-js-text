@@ -44,9 +44,14 @@ const tick = () => {
 
     //clock
     const elapsedTime = clock.getElapsedTime();
-    console.log(elapsedTime * Math.PI * 2)
+    // console.log(elapsedTime * Math.PI * 2)
     // mesh.rotation.y  = elapsedTime
-    mesh.rotation.y  = elapsedTime * Math.PI * 2
+    // mesh.rotation.y  = elapsedTime * Math.PI * 2
+    // mesh.position.y  = elapsedTime
+
+    //play with position by using trigonometry
+    mesh.position.y  = Math.sin(elapsedTime)
+    mesh.position.x = Math.cos(elapsedTime)
 
     //render
     renderer.render(scene, camera)
