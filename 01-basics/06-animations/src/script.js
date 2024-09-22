@@ -28,4 +28,16 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 renderer.setSize(sizes.width, sizes.height)
-renderer.render(scene, camera)
+
+const tick = () => {
+
+    //updating objects
+    mesh.position.x += 0.01
+    mesh.position.y -= 0.01
+    mesh.rotation.y += 0.01
+
+    //render
+    renderer.render(scene, camera)
+    window.requestAnimationFrame(tick)
+}
+tick()
